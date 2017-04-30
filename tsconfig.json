@@ -12,9 +12,10 @@
     "strictNullChecks": true,
     "removeComments": true,
     "noUnusedLocals": true,
-    "moduleResolution": "node",
     "sourceMap": true,
     "inlineSources": true,
-    "target": "es6"
+    "module": "commonjs",
+    "moduleResolution": "node",    
+    "target": "es5"
   }
 }

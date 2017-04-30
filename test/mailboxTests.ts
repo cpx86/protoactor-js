@@ -1,30 +1,23 @@
-
 import { timeAction } from "./timeAction";
 import { Message } from "../src/messages";
 import { Unbounded } from "../src/mailbox";
 import { IMessageInvoker } from "../src/invoker";
 import { Dispatcher } from "../src/dispatcher";
 import * as assert from "assert";
-import { } from "mocha";
+import "mocha";
 
 class Invoker implements IMessageInvoker {
-    InvokeSystemMessage(message: string): Promise<void> {
-        throw new Error("Method not implemented." + message);
-    }
-    InvokeUserMessage(message: string): Promise<void> {
-        throw new Error("Method not implemented." + message);
-    }
     EscalateFailure(error: any): void {
-        throw new Error("Method not implemented." + error);
+        console.warn("Method not implemented." + error);
     }
     c = 0;
     hrstart: [number, number]
 
-    async invokeSystemMessage(msg: Message) {
+    async InvokeSystemMessage(msg: Message) {
         await Promise.resolve(msg)
     }
 
-    async invokeUserMessage(msg: Message) {
+    async InvokeUserMessage(msg: Message) {
         this.increment()
         await Promise.resolve(msg)
     }
