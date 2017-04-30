@@ -1,5 +1,5 @@
 import * as actor from "../src/actor";
-import {LocalContext} from "../src/localContext";
+import { LocalContext } from "../src/localContext";
 
 class Hello {
     constructor(public Who: string) {
